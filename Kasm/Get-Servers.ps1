@@ -1,5 +1,5 @@
 $Settings = Import-PowerShellDataFile .\Kasm\Settings.psd1
-
+#Docu = https://docs.kasm.com/docs/reference/developer-api
 function Get-KASMServers {
     param (
         $apikey,
