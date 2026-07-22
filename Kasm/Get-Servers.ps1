@@ -1,5 +1,3 @@
-$Settings = Import-PowerShellDataFile .\Kasm\Settings.psd1
-#Docu = https://docs.kasm.com/docs/reference/developer-api
 function Get-KASMServers {
     param (
         $apikey,
@@ -32,6 +30,9 @@ function Get-KASMServers {
     $res = Invoke-RestMethod -Method Post -Uri "$HostName/api/public/get_servers" -Body ($body | ConvertTo-Json -Compress) -Headers $headers
     return $res.servers
 }
+
+$Settings = Import-PowerShellDataFile .\Kasm\Settings.psd1
+#Docu = https://docs.kasm.com/docs/reference/developer-api
 
 $Servers = Get-KASMServers -apikey $Settings.ApiKey -apikeysecret $Settings.ApiKeySecret -HostName $Settings.BaseURL
 $Servers[0]
