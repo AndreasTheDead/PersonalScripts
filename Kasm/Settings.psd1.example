@@ -1,0 +1,5 @@
+@{
+    ApiKey = ""
+    ApiKeySecret = ""
+    BaseURL = "https://" #Without Trailing /
+}
